@@ -17,14 +17,14 @@ export const FakeData = [
   {
     id: '03',
     name: 'Cerveja Lager Premium Puro Malte Zero Álcool Heineken Lata 350ml',
-    img: 'https://static.paodeacucar.com/img/uploads/1/58/666058.png',
+    img: 'https://static.paodeacucar.com/img/uploads/1/52/607052.png',
     qdt: 1,
     description: 'Puro Malte',
   },
   {
     id: '04',
     name: 'Composto Lácteo NINHO Fases 3+ 400g',
-    img: 'https://static.paodeacucar.com/img/uploads/1/880/635880.png',
+    img: 'https://static.paodeacucar.com/img/uploads/1/335/656335.png',
     qdt: 1,
     description:
       'foi criado com nutrientes essenciais para ajudar o seu filho, que está crescendo e aprendendo a ser cada vez mais independente.',
@@ -33,7 +33,7 @@ export const FakeData = [
     id: '05',
     name:
       'Kit 6 Cervejas ANTARCTICA Original Garrafa 600ml + Contrafilé Maturatta Friboi 1kg',
-    img: 'https://static.paodeacucar.com/img/uploads/1/58/666058.png',
+    img: 'https://static.paodeacucar.com/img/uploads/1/65/658065.png',
     qdt: 1,
     description:
       'Contra Filé Maturatta FRIBOI Resfriado Pedaço 1kg	+ Cerveja ANTARCTICA Original Garrafa 600ml	',

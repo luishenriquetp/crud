@@ -49,7 +49,7 @@ const SignUp = () => {
               placeholder="Password"
             />
             <Button
-              text="Sign In"
+              text="Sign Up"
               onPress={() => {
                 console.log('press');
                 formRef.current.submitForm();

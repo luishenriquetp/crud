@@ -1,15 +1,18 @@
 import React from 'react';
 // import {View} from 'react-native';
 
-import {Container, Content, Description, Image, Title} from './styles';
+import {Container, Content, Image, Title} from './styles';
 
-const product = () => {
+const product = ({item, selectItem}) => {
   return (
-    <Container>
-      <Image />
+    <Container
+      onPress={() => {
+        selectItem(item);
+        console.log('press');
+      }}>
+      <Image source={{uri: item.img}} />
       <Content>
-        <Title>Product Title</Title>
-        <Description>Product Description</Description>
+        <Title>{item.name}</Title>
       </Content>
     </Container>
   );

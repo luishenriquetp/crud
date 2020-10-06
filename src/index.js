@@ -11,9 +11,7 @@ const App = () => {
     <NavigationContainer>
       <StatusBar barStyle="light-content" />
       <ContextProvider>
-        <Container>
-          <Routes />
-        </Container>
+        <Routes />
       </ContextProvider>
     </NavigationContainer>
   );

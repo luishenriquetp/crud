@@ -10,7 +10,7 @@ import {
 } from './styles';
 
 const CustomHeader = ({title, goBack, primary}) => {
-  const {setUserData} = useContext(AppContext);
+  const {userData, setUserData} = useContext(AppContext);
 
   const handleLogout = async () => {
     await AsyncStorage.clear();
@@ -22,7 +22,7 @@ const CustomHeader = ({title, goBack, primary}) => {
       <Container>
         <HeaderTitle>
           Welcome {'\n'}
-          <UserName>Allan</UserName>
+          <UserName>{userData.name}</UserName>
         </HeaderTitle>
         <HeaderAction onPress={() => handleLogout()}>
           <HeaderActionText>Logout</HeaderActionText>

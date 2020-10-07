@@ -11,7 +11,7 @@ export default function AppProvider(props) {
   useEffect(() => {
     const getStorage = async () => {
       const stored = await AsyncStorage.getItem('@Crud-User');
-      setUserData(stored);
+      setUserData(JSON.parse(stored));
       // AsyncStorage.clear();
     };
     getStorage();

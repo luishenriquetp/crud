@@ -6,10 +6,11 @@ import {
   SafeAreaView,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {AppContext} from '../../Context/Context';
-import Input from '../../components/Input';
-import Button from '../../components/Button';
 import {Form} from '@unform/mobile';
+import {AppContext} from '../../../hooks/AppContext';
+import Input from '../../../components/Input';
+import Button from '../../../components/Button';
+import CustomHeader from '../../../components/CustomHeader';
 import {Container, Image} from './styles';
 
 const CreateProduct = () => {
@@ -20,7 +21,6 @@ const CreateProduct = () => {
   );
   const formRef = useRef(null);
   const handleSignIn = useCallback((inputData) => {
-    console.log('inputData', inputData);
     const {name, description} = inputData;
     if (name && description) {
       const newProduct = {
@@ -29,18 +29,18 @@ const CreateProduct = () => {
         description,
         img: defaultImage,
       };
-      console.log(newProduct);
       setData([...data, newProduct]);
       navigation.goBack();
     }
-  });
+  }, []);
 
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       style={{flex: 1}}
       enable>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: '#28262e'}}>
+        <CustomHeader title="Create" goBack={() => navigation.goBack()} />
         <ScrollView
           style={{flex: 1}}
           keyboardShouldPersistTaps="handle"
@@ -53,7 +53,6 @@ const CreateProduct = () => {
               <Button
                 text="Create"
                 onPress={() => {
-                  console.log('press');
                   formRef.current.submitForm();
                 }}
               />

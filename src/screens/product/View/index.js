@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {useRoute, useNavigation} from '@react-navigation/native';
-import {AppContext} from '../../Context/Context';
-import {Modal, SafeAreaView} from 'react-native';
-
+import {AppContext} from '../../../hooks/AppContext';
+import {SafeAreaView} from 'react-native';
+import CustomHeader from '../../../components/CustomHeader';
 import {
   Container,
   Title,
@@ -21,22 +21,21 @@ const ProductView = () => {
   const deleteProduct = () => {
     const res = data.filter((item) => item.id != product.id);
     setData(res);
-    console.log('result', res);
     navigation.goBack();
   };
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#28262e'}}>
+      <CustomHeader title="Detail" goBack={() => navigation.goBack()} />
       <Container>
         <Title>{product.name}</Title>
         <Image source={{uri: product.img}} />
         <Description>{product.description}</Description>
         <CardActions>
-          <Action>
+          <Action onPress={() => navigation.navigate('EditProduct', {product})}>
             <ActionText>Edit</ActionText>
           </Action>
           <Action
             onPress={() => {
-              console.log('deleting');
               deleteProduct();
             }}>
             <ActionText>Delete</ActionText>

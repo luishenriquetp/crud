@@ -40,7 +40,6 @@ const SignIn = () => {
             <Button
               text="Sign In"
               onPress={() => {
-                console.log('press');
                 formRef.current.submitForm();
               }}
             />

@@ -1,12 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {useField} from '@unform/core';
-// import {View} from 'react-native';
 
 import {Container, InputText} from './styles';
 
 const Input = ({name, icon, ...rest}) => {
   const inputRef = useRef(null);
-  const {registerField, defaultValue = '', fieldName, error} = useField(name);
+  const {registerField, defaultValue = '', fieldName} = useField(name);
 
   useEffect(() => {
     inputRef.current.value = defaultValue;

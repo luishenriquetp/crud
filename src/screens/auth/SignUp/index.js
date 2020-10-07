@@ -5,10 +5,8 @@ import {useNavigation} from '@react-navigation/native';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import {Form} from '@unform/mobile';
-import {AppContext} from '../../../Context/Context';
+import {AppContext} from '../../../hooks/AppContext';
 import {Container, Back, BackText} from './styles';
-
-// import { Container } from './styles';
 
 const SignUp = () => {
   const {setUserData} = useContext(AppContext);
@@ -20,7 +18,6 @@ const SignUp = () => {
       await AsyncStorage.setItem('@Crud-User', JSON.stringify(data));
       setUserData(data);
     }
-    console.log(data);
   }, []);
 
   return (
@@ -51,7 +48,6 @@ const SignUp = () => {
             <Button
               text="Sign Up"
               onPress={() => {
-                console.log('press');
                 formRef.current.submitForm();
               }}
             />

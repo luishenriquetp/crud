@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import {screenWidth} from '../../utils/sizes';
 
 export const Container = styled.TouchableOpacity`
-  width: ${screenWidth * 0.8};
+  width: ${screenWidth * 0.8}px;
   padding: 20px;
   flex-direction: row;
   justify-content: flex-start;
